@@ -6,60 +6,60 @@ html
   body#mat2
     main
         div.container
-            div.imgContainer
-              img(src="https://drive.google.com/uc?export=download&amp;id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g", alt="logo").logo
+            include ../pug_components/_logo.pug 
+
             h1 
               b 
                 small Painel
 
-            span._pink#camposObrigatorios
+            span.pink_#camposObrigatorios
              
             div.row
                 div.input-field.col.s6
                   p Solicitante (Nome Completo) 
-                    span._pink *
-                    input(type="text")#solicitante.validate
+                    span.pink_  *
+                  input(type="text")#solicitante.validate
                 
                 div.input-field.col.s6
                   p Matrícula (XXXXXX) 
-                    span._pink *
-                    input(type="text")#cs.validate.cs
-                    small 
-                      span._pink
+                    span.pink_ *
+                  input(type="text")#cs.validate.cs
+                  small 
+                    span.pink_ 
              
             div.row
               div.input-field.col.s6
-              p Tipo de impressão 
-                span.pink_ *
-              select#tipo1.validate
-                option(selected) Preto e Branco
-                option Colorido
+                p Tipo de impressão 
+                  span.pink_ *
+                select#tipo1.validate
+                  option(selected) Preto e Branco
+                  option Colorido
                
               div.input-field.col.s6
                 p Tipo de impressão 2 
-                span.pink_ *
+                  span.pink_ *
                 select#tipo2.validate
                   option(selected) Frente e Verso
                   option Frente
              
-              div.row
-                div.input-field.col.s6
-                  p Solicitação
-                    span.pink_ *
-                    textarea#solicitacao.materialize-textarea.validate
+            div.row
+              div.input-field.col.s12
+                p Solicitação
+                  span.pink_ *
+                textarea#solicitacao.materialize-textarea.validate
 
-              div.row
-                div.input-field.col.s12
-                  p Data Necessidade
-                    span.pink_ *
-                    input(type="text").datepicker.validate#data
-                    small
-                      span.pink_#avisoPrazo
+            div.row
+              div.input-field.col.s12
+                p Data Necessidade
+                  span.pink_ *
+                input(type="text").datepicker.validate#data
+                small
+                  span.pink_#avisoPrazo
 
-              div.row.enviar
-                button#btn.waves-effect.waves-light.btn-small.col.s3
-                  i.material-icons.left send
-                  span Registrar
+            div.row.enviar
+              button#btn.waves-effect.waves-light.btn-small.col.s3
+                i.material-icons.left send
+                span Registrar
 
     footer
       div.container

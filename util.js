@@ -9,6 +9,10 @@ const files = {
     from: "./client/html/index.html",
     to: "./src/index.html",
   },
+  pedido: {
+    from: "./client/html/pedido.html",
+    to: "./src/pedido.html",
+  },
 };
 
 Object.values(files).forEach((value) => {
