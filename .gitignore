@@ -4,4 +4,4 @@ tsconfig.json
 src/appsscript.json
 dist/*.css
 node_modules/
-gitpush.sh
+pu.sh
