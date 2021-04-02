@@ -1,98 +1,80 @@
-//- <!DOCTYPE html>
-//- <html>
-
-//-   <head id='mat'>
-//-     <base target="_top">
+doctype html 
+html 
   
-//-     <?!= include("css"); ?>
-//-         <!--Import Google Icon Font-->
-//-         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-//-         <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-//-         <!-- Compiled and minified CSS -->
-//-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-//-   </head>
+  include ../pug_components/_header.pug 
 
-//-   <body id="mat2">
-//-     <main>
-//-         <div class="container">
-//-             <div class="imgContainer">
-//-               <img class="logo" src="https://drive.google.com/uc?export=download&amp;id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g" alt="" />
-//-             </div>
-//-             <h1><b><small>Painel</small></b></h1>
-//-             <span class="pink_" id="camposObrigatorios"></span>
+  body#mat2
+    main
+        div.container
+            div.imgContainer
+              img(src="https://drive.google.com/uc?export=download&amp;id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g", alt="logo").logo
+            h1 
+              b 
+                small Painel
+
+            span._pink#camposObrigatorios
              
-//-               <div class="row">
-//-                 <div class="input-field col s6">
-//-                     <p>Solicitante (Nome Completo) <span class="pink_">*</span></p>
-//-                     <input id="solicitante" type="text" class="validate">
-//-                 </div>
+            div.row
+                div.input-field.col.s6
+                  p Solicitante (Nome Completo) 
+                    span._pink *
+                    input(type="text")#solicitante.validate
                 
-//-                 <div class="input-field col s6">
-//-                     <p>CS (CSXXXXXX) <span class="pink_">*</span></p>
-//-                     <input id="cs" type="text" class="validate cs">
-//-                     <small><span class="pink_"></span></small>
-//-                 </div>
-//-              </div>
+                div.input-field.col.s6
+                  p Matrícula (XXXXXX) 
+                    span._pink *
+                    input(type="text")#cs.validate.cs
+                    small 
+                      span._pink
              
-//-              <div class="row">
-//-               <div class="input-field col s6">
-//-                <p>Tipo de impressão <span class="pink_">*</span></p>
-//-                <select id="tipo1" class="validate">
-//-                 <option selected>Preto e Branco</option>
-//-                 <option>Colorido</option>
-//-                </select>
-//-                </div>
+            div.row
+              div.input-field.col.s6
+              p Tipo de impressão 
+                span.pink_ *
+              select#tipo1.validate
+                option(selected) Preto e Branco
+                option Colorido
                
-//-                <div class="input-field col s6">
-//-                 <p>Tipo de impressão 2 <span class="pink_">*</span></p>
-//-                 <select id="tipo2" class="validate">
-//-                  <option selected>Frente e Verso</option>
-//-                  <option>Frente</option>
-//-                 </select>
-//-                </div>
-//-              </div>
+              div.input-field.col.s6
+                p Tipo de impressão 2 
+                span.pink_ *
+                select#tipo2.validate
+                  option(selected) Frente e Verso
+                  option Frente
              
-//-                <div class="row">
-//-                 <div class="input-field col s12">
-//-                     <p>Solicitação <span class="pink_">*</span></p>
-//-                     <textarea id="solicitacao" class="materialize-textarea validate"></textarea>
-//-                 </div>
-//-                </div>
-//-                 <div class="row">
-//-                 <div class="input-field col s12">
-//-                     <p>Data Necessidade<span class="pink_">*</span></p>
-//-                     <input type="text" class="datepicker validate" id="data">
-//-                     <small><span class="pink_" id="avisoPrazo"></span></small>
-//-                 </div>
-//-              </div>
-             
-            
-//-              <div class="row enviar">
-                                     
-//-                     <button id="btn" class="waves-effect waves-light btn-small col s3">
-//-                        <i class="material-icons left">send</i>
-//-                        Registrar
-//-                     </button>
-//-              </div>
-//-            </div>             
-//-        </main>
-//-     <footer>
-//-       <div class="container">
-//-         <span>Copyright &copy; 2021 <b>Mage Deungaro</b></span>
-//-       </div>
-//-     </footer>
-//-     <div class="loading hidden" id="loading">
-//-       <div class="container">        <div class="progress">
-//-          <div class="indeterminate"></div>
-//-        </div>
-//-       </div>
-//-     </div>
-    
-//-     <button onclick="topFunction()" id="topBtn" title="Go to top"><i class="material-icons">arrow_upward</i></button>
-//-     <?!= include("js"); ?>
-//-     <?!= include("js2"); ?>
-//-         <!-- Compiled and minified JavaScript -->
-//-         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-//-   </body>
+              div.row
+                div.input-field.col.s6
+                  p Solicitação
+                    span.pink_ *
+                    textarea#solicitacao.materialize-textarea.validate
 
-//- </html>
+              div.row
+                div.input-field.col.s12
+                  p Data Necessidade
+                    span.pink_ *
+                    input(type="text").datepicker.validate#data
+                    small
+                      span.pink_#avisoPrazo
+
+              div.row.enviar
+                button#btn.waves-effect.waves-light.btn-small.col.s3
+                  i.material-icons.left send
+                  span Registrar
+
+    footer
+      div.container
+        span Copyright &copy; 2021
+          b Mage Deungaro
+
+    div.loading.hidden#loading
+      div.container
+        div.progress
+         div.indeterminate
+    
+    button(onclick="topFunction()", title="Go to top")#topBtn
+      i.material-icons
+      span arrow_upward
+    <?!= include("js"); ?>
+    <?!= include("js2"); ?>
+        <!-- Compiled and minified JavaScript -->
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
