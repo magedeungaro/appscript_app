@@ -3,61 +3,72 @@
 
   <head id='mat'>
     <base target="_top">
-  
+
     <?!= include("css"); ?>
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+          rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   </head>
 
   <body id="mat2">
     <main>
-        <div class="container">
-            <div class="imgContainer">
-              <img class="logo" src="https://drive.google.com/uc?export=download&id=1eSrobCe80X0O4MsH7kWQ6k7ggIFwj8Ii" alt="" />
-            </div>
-            <h1><b><small>Resumo do Pedido</small></b></h1>
-             <div class="row">
-               <p>Sua solicitação foi recebida!</p>
-               <p>Número do Pedido: #<b><span id="nPedido"></span></b></p>
-             </div>
-             <div class="row enviar">
-                   <a href="<?= ScriptApp.getService().getUrl()?>?v=req">        
-                    <button id="epiBtn" class="waves-effect waves-light btn-small col s3">
-                       <i class="material-icons left">local_printshop</i>
-                       Solicitar nova impressão
-                    </button>
-                    </a>
-             </div>
-              <div class="row enviar">
-                   <a href="<?= ScriptApp.getService().getUrl()?>?v=acpto">         
-                    <button id="matBtn" class="waves-effect waves-light btn-small col s3">
-                       <i class="material-icons left">local_shipping</i>
-                       Acompanhar meu pedido
-                    </button>
-                   </a>
-             </div>
-           </div>             
-       </main>
+      <div class="container">
+        <div class="imgContainer">
+          <img class="logo"
+               src="https://drive.google.com/uc?export=download&id=1eSrobCe80X0O4MsH7kWQ6k7ggIFwj8Ii"
+               alt="" />
+        </div>
+        <h1><b><small>Resumo do Pedido</small></b></h1>
+        <div class="row">
+          <p>Sua solicitação foi recebida!</p>
+          <p>Número do Pedido: #<b><span id="nPedido"></span></b></p>
+        </div>
+        <div class="row enviar">
+          <a href="<?= ScriptApp.getService().getUrl()?>?v=req">
+            <button id="epiBtn"
+                    class="waves-effect waves-light btn-small col s3">
+              <i class="material-icons left">local_printshop</i>
+              Solicitar nova impressão
+            </button>
+          </a>
+        </div>
+        <div class="row enviar">
+          <a href="<?= ScriptApp.getService().getUrl()?>?v=acpto">
+            <button id="matBtn"
+                    class="waves-effect waves-light btn-small col s3">
+              <i class="material-icons left">local_shipping</i>
+              Acompanhar meu pedido
+            </button>
+          </a>
+        </div>
+      </div>
+    </main>
     <footer>
       <div class="container">
-        <span>Copyright &copy; 2021 <b>Raízen</b></span>
+        <span>Copyright &copy; 2021 <b>Mage Deungaro</b></span>
       </div>
     </footer>
-    <div class="loading hidden" id="loading">
-      <div class="container">        <div class="progress">
-         <div class="indeterminate"></div>
-       </div>
+    <div class="loading hidden"
+         id="loading">
+      <div class="container">
+        <div class="progress">
+          <div class="indeterminate"></div>
+        </div>
       </div>
     </div>
-    
-    <button onclick="topFunction()" id="topBtn" title="Go to top"><i class="material-icons">arrow_upward</i></button>
+
+    <button onclick="topFunction()"
+            id="topBtn"
+            title="Go to top"><i class="material-icons">arrow_upward</i></button>
     <?!= include("js"); ?>
     <?!= include("resumojs"); ?>
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 
 </html>

@@ -2,7 +2,7 @@
 <p>
 Esta é uma aplicação conceitual que engloba diversos aspectos das mini-aplicações feitas no dia a dia que facilitam alguns processos. Appscript é ótimo para a construção de formulários customizados, seja fazendo um webapp ou manipulando um formulário Google.
 
-#pug #sass #parcel #appscript #boxy
+#pug #sass #parcel #appscript #boxysvg
 
 </p>
 

@@ -11,7 +11,7 @@ function doGet(e) {
       .setSandboxMode(HtmlService.SandboxMode.IFRAME)
       .addMetaTag("viewport", "width=device-width, initial-scale=1")
       .setFaviconUrl(favicon)
-      .setTitle("Solicitação de Impressão • Raízen");
+      .setTitle("Solicitação de Impressão • Mage Deungaro");
   } else if (e.parameters.v == "acpto") {
     let temp = HtmlService.createTemplateFromFile("acompanhamento");
     return temp
@@ -19,7 +19,7 @@ function doGet(e) {
       .setSandboxMode(HtmlService.SandboxMode.IFRAME)
       .addMetaTag("viewport", "width=device-width, initial-scale=1")
       .setFaviconUrl(favicon)
-      .setTitle("Acompanhar Pedido • Raízen");
+      .setTitle("Acompanhar Pedido • Mage Deungaro");
   } else if (e.parameters.v == "resumo") {
     let temp = HtmlService.createTemplateFromFile("resumo");
     return temp
@@ -27,7 +27,7 @@ function doGet(e) {
       .setSandboxMode(HtmlService.SandboxMode.IFRAME)
       .addMetaTag("viewport", "width=device-width, initial-scale=1")
       .setFaviconUrl(favicon)
-      .setTitle("Acompanhar Pedido • Raízen");
+      .setTitle("Acompanhar Pedido • Mage Deungaro");
   } else if (e.parameters.v == "painel") {
     let temp = HtmlService.createTemplateFromFile("painel");
     return temp
@@ -35,7 +35,7 @@ function doGet(e) {
       .setSandboxMode(HtmlService.SandboxMode.IFRAME)
       .addMetaTag("viewport", "width=device-width, initial-scale=1")
       .setFaviconUrl(favicon)
-      .setTitle("Painel • Raízen");
+      .setTitle("Painel • Mage Deungaro");
   } else {
     let temp = HtmlService.createTemplateFromFile("index");
     return temp
@@ -43,7 +43,7 @@ function doGet(e) {
       .setSandboxMode(HtmlService.SandboxMode.IFRAME)
       .addMetaTag("viewport", "width=device-width, initial-scale=1")
       .setFaviconUrl(favicon)
-      .setTitle("Solicitação de Impressão • Raízen");
+      .setTitle("Solicitação de Impressão • Mage Deungaro");
   }
 }
 
