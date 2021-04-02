@@ -11,7 +11,7 @@
     "dev": "parcel ./client/css/css.html",
     "build": "parcel build ./client/css/css.html --no-minify --no-source-maps --no-cache",
     "pug-process": "pug ./client/pug/ -o ./client/html -P",
-    "bash-replace": "bash replace.sh ./client/html/index.html",
+    "bash-replace": "bash replace.sh",
     "process": "npm run pug-process && npm run bash-replace && npm run build && node util.js && clasp push"
   }
 }
