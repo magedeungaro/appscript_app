@@ -1,38 +1,38 @@
-<!DOCTYPE html >
-<html> 
-  <head id="mat">
-    <base target="_top"/><?!= include("css"); ?>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&amp;display=swap"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+<!DOCTYPE html>
+<html>
+  <head id="mat"><?!= include("css"); ?>
+    <base target="_top">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   </head>
   <body id="mat2">
     <main>
       <div class="container">
-        <div class="imgContainer"><img class="logo" src="https://drive.google.com/uc?export=download&amp;id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g" alt="logo"/></div>
+        <div class="imgContainer"><img class="logo" src="https://drive.google.com/uc?export=download&amp;id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g" alt="logo"></div>
         <h1> <b> <small>Painel</small></b></h1><span class="pink_" id="camposObrigatorios"></span>
         <div class="row">
           <div class="input-field col s6">
             <p>Solicitante (Nome Completo) <span class="pink_"> *</span></p>
-            <input class="validate" type="text" id="solicitante"/>
+            <input class="validate" type="text" id="solicitante">
           </div>
           <div class="input-field col s6">
             <p>Matrícula (XXXXXX) <span class="pink_">*</span></p>
-            <input class="validate cs" type="text" id="cs"/><small> <span class="pink_"> </span></small>
+            <input class="validate cs" type="text" id="cs"><small> <span class="pink_"> </span></small>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
             <p>Tipo de impressão <span class="pink_">*</span></p>
             <select class="validate" id="tipo1">
-              <option selected="selected">Preto e Branco</option>
+              <option selected>Preto e Branco</option>
               <option>Colorido</option>
             </select>
           </div>
           <div class="input-field col s6">
             <p>Tipo de impressão 2 <span class="pink_">*</span></p>
             <select class="validate" id="tipo2">
-              <option selected="selected">Frente e Verso</option>
+              <option selected>Frente e Verso</option>
               <option>Frente</option>
             </select>
           </div>
@@ -46,7 +46,7 @@
         <div class="row">
           <div class="input-field col s12">
             <p>Data Necessidade<span class="pink_">*</span></p>
-            <input class="datepicker validate" type="text" id="data"/><small><span class="pink_" id="avisoPrazo"></span></small>
+            <input class="datepicker validate" type="text" id="data"><small><span class="pink_" id="avisoPrazo"></span></small>
           </div>
         </div>
         <div class="row enviar">
@@ -55,7 +55,7 @@
       </div>
     </main>
     <footer>
-      <div class="container"><span>Copyright &copy; 2021<b>Mage Deungaro</b></span></div>
+      <div class="container"></div><span>Copyright &copy; 2021 <b>Mage Deungaro</b></span>
     </footer>
     <div class="loading hidden" id="loading">
       <div class="container">
@@ -64,9 +64,7 @@
         </div>
       </div>
     </div>
-    <button onclick="topFunction()" title="Go to top" id="topBtn"><i class="material-icons"></i><span>arrow_upward</span></button><?!= include("js"); ?>
-<?!= include("js2"); ?>
-<!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <button onclick="topFunction()" title="Go to top" id="topBtn"><i class="material-icons">arrow_upward</i></button><?!= include("js"); ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script><?!= include("js2"); ?>
   </body>
 </html>

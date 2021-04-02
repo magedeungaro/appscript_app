@@ -156,10 +156,10 @@ button.col.s3.btn-small {
 #topBtn {
   display: none;
   background: transparent;
-  color: $bic;
+  color: $grass;
   cursor: pointer;
   border: none;
-  outline: 1px solid $bic;
+  outline: 1px solid $grass;
   outline-offset: 11px;
   position: fixed;
   bottom: 20px;
@@ -168,8 +168,8 @@ button.col.s3.btn-small {
   padding: 15px;
 
   &:hover {
-    color: var(--orange);
-    outline: 1px solid var(--orange);
+    color: $papaya;
+    outline: 1px solid $papaya;
     outline-offset: 0px;
   }
 }

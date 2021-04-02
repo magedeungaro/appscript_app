@@ -1,5 +1,7 @@
-doctype html 
-html 
+include ../pug_mixins/_mixins.pug
+
+doctype html
+html
   
   include ../pug_components/_header.pug 
 
@@ -57,24 +59,14 @@ html
                   span.pink_#avisoPrazo
 
             div.row.enviar
-              button#btn.waves-effect.waves-light.btn-small.col.s3
-                i.material-icons.left send
-                span Registrar
+              +button("btn", "send", "Registrar")
 
-    footer
-      div.container
-        span Copyright &copy; 2021
-          b Mage Deungaro
+    include ../pug_components/_footer.pug 
 
-    div.loading.hidden#loading
-      div.container
-        div.progress
-         div.indeterminate
+    include ../pug_components/_loading.pug 
     
-    button(onclick="topFunction()", title="Go to top")#topBtn
-      i.material-icons
-      span arrow_upward
-    <?!= include("js"); ?>
+    include ../pug_components/_topButton.pug 
+    
+    include ../pug_components/_scripts.pug 
+    
     <?!= include("js2"); ?>
-        <!-- Compiled and minified JavaScript -->
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
