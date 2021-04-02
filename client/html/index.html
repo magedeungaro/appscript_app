@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head id="mat">
+    <base target="_top"><?!= include("css"); ?>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  </head>
+  <body id="mat2">
+    <main>
+      <div class="container">
+        <div class="imgContainer"><img class="logo" src="https://drive.google.com/uc?export=download&amp;id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g" alt="logo"></div>
+        <h1><b>Portal de Requisição</b></h1>
+        <div class="row">
+          <p>Esta é uma aplicação conceitual que engloba diversos aspectos das mini-aplicações que desenvolvo no dia a dia para melhoria de fluxos.</p>
+        </div>
+        <div class="row enviar"><a href="<?= ScriptApp.getService().getUrl()?>?v=req">
+            <button class="waves-effect waves-light btn-small col s3" id="epiBtn"><i class="material-icons left">add_shopping_cart</i><span>Fazer pedido</span></button></a></div>
+        <div class="row enviar"><a href="<?= ScriptApp.getService().getUrl()?>?v=acpto">
+            <button class="waves-effect waves-light btn-small col s3" id="matBtn"><i class="material-icons left">local_shipping</i><span>Acompanhar pedido</span></button></a></div>
+      </div>
+    </main>
+    <footer>
+      <div class="container"><span>Copyright &copy; 2021<b> Mage Deungaro</b></span></div>
+    </footer>
+    <div class="loading hidden" id="loading">
+      <div class="container">
+        <div class="progress">
+          <div class="indeterminate"></div>
+        </div>
+      </div>
+    </div>
+    <button onclick="topFunction()" title="Go to top" id="topBtn"><i class="material-icons">arrow_upward</i></button><?!= include("js"); ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+.vscode/
+.clasp.json
+tsconfig.json
+src/appsscript.json
+dist/*.css
+node_modules/
+gitpush.sh

@@ -1,0 +1,40 @@
+doctype html
+html
+  
+  include ../pug_components/_header.pug
+
+  body#mat2
+
+    main
+      div.container
+        div.imgContainer
+          img(src="https://drive.google.com/uc?export=download&id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g", alt="logo").logo
+        h1
+          b Portal de Requisição
+        div.row
+          p Esta é uma aplicação conceitual que engloba diversos aspectos das mini-aplicações que desenvolvo no dia a dia para melhoria de fluxos.
+        div.row.enviar
+          a(href="<?= ScriptApp.getService().getUrl()?>?v=req")
+            button#epiBtn.waves-effect.waves-light.btn-small.col.s3
+              i.material-icons.left add_shopping_cart
+              span Fazer pedido
+        div.row.enviar
+          a(href='<?= ScriptApp.getService().getUrl()?>?v=acpto')
+            button#matBtn.waves-effect.waves-light.btn-small.col.s3
+              i.material-icons.left local_shipping
+              span Acompanhar pedido
+
+    footer
+      div.container
+        span Copyright &copy; 2021
+          b  Mage Deungaro
+    div.loading.hidden#loading
+      div.container
+        div.progress
+          div.indeterminate
+    button(onclick="topFunction()", title="Go to top")#topBtn
+      i.material-icons arrow_upward
+
+    <?!= include("js"); ?>
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")

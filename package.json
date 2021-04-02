@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "parcel-plugin-inliner": "^1.0.16",
+    "posthtml": "^0.11.6"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.32.8"
+  },
+  "scripts": {
+    "dev": "parcel ./client/css/css.html",
+    "build": "parcel build ./client/css/css.html --no-minify --no-source-maps --no-cache",
+    "pug-process": "pug ./client/pug/ -o ./client/html -P",
+    "bash-replace": "bash replace.sh ./client/html/index.html",
+    "process": "npm run pug-process && npm run bash-replace && npm run build && node util.js && clasp push"
+  }
+}

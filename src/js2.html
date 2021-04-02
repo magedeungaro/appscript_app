@@ -1,0 +1,83 @@
+<!-- SCRIPT -->
+
+<script>
+     document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('btn').addEventListener('click', enviarInfo, false);
+               
+       M.FormSelect.init(document.querySelectorAll('select'));
+       
+       const csInputs = document.getElementsByClassName('cs');
+       for(let i = 0; i < csInputs.length; i++){
+         csInputs[i].addEventListener('focusout', function(){csRegex(csInputs[i], myreg, "CS");}, false);
+       }
+       
+         M.Datepicker.init(document.querySelectorAll('.datepicker'), 
+       {
+         defaultDate: null,
+         maxDate: null,
+         yearRange: null,
+         format: "yyyy/mm/dd"    
+        }
+       );  
+    },false);
+    
+    function enviarInfo(){
+      let pedido = [];
+     //informações do pedido
+      let infos = document.getElementsByClassName('validate');
+      
+      //ver se a data de necessidade está dentro do ao menos um dia de antecedência
+      let today = new Date();
+      let dataNec = new Date(infos[infos.length-1].value);
+      if(dataNec-today<1){ 
+       console.log('data menor do que a necessaria');
+       let dataInput = document.getElementById('data');
+       let avisoPrazo = document.getElementById('avisoPrazo');
+       dataInput.classList.add('wrong');
+       avisoPrazo.innerHTML = 'O pedido precisa ser feito com no mínimo 1 dia de antecedência';
+       return;
+      }
+      
+      for(let i = 0; i<infos.length;i++){
+       if(i==1){
+        let cs = document.getElementById('cs').value.toUpperCase();
+        if(cs != "") cs = myreg.exec(cs)[2];
+        pedido.push(cs);
+       }else{
+        pedido.push(infos[i].value);
+       }
+       console.log(pedido);
+      }
+      
+      if(pedido.includes("")){
+        let avisoObg = document.getElementById('camposObrigatorios');
+        avisoObg.innerHTML = "<i class='fas fa-exclamation-triangle'></i> É necessário preencher todos os campos obrigatórios";
+        for(let j = 0; j<infos.length; j++){
+         inputNec2(infos[j],'wrong');
+        }
+        return;
+      }
+ 
+     onLoading();
+     google.script.run.withSuccessHandler(
+       function(res){
+       
+       window.open(res,'_top');
+     
+      offLoading();
+      }
+     ).withFailureHandler(
+      function(res){
+        alert('Não foi possível enviar as informações. Por favor, entre em contato com o suporte. Ramal 6204');
+      }
+     ).writeData(pedido);
+   }
+                       
+    
+
+  </script>
+  
+  
+  
+  
+  

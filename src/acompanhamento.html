@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+  <head id='mat'>
+    <base target="_top">
+  
+    <?!= include("css"); ?>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+        
+        /* Firefox */
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
+        </style>
+  </head>
+
+  <body id="mat2">
+    <main>
+        <div class="container">
+            <div class="imgContainer">
+              <img class="logo" src="https://drive.google.com/uc?export=download&id=1eSrobCe80X0O4MsH7kWQ6k7ggIFwj8Ii" alt="" />
+            </div>
+            <h1><b><small>Acompanhamento de Pedido</small></b></h1>
+            <span class="pink_" id="camposObrigatorios"></span>
+             
+              <div class="row">
+                <div class="input-field col s6">
+                    <p>Entre o número do pedido<span class="pink_">*</span></p>
+                    <input id="nPedido" type="text" class="validate" placeholder="Somente números">
+                </div>
+                
+                <div class="input-field col s6 alt0" id="status">
+                <p>Pedido #<b><span class="status"></span></b></p>
+                <p>Status: <span class="status"></span></p>
+                <p>CS<span class="status"></span> <span class="status"></span></p>
+                <p>Nota adicional: <span class="status"></span></p>
+                </div>
+             </div>
+            
+            <div class="row enviar">
+                  <button id="clrBtn" class="waves-effect waves-light btn-small col s3">
+                       <i class="material-icons left">search</i>
+                       Buscar
+                    </button>
+             </div>
+             <div class="row enviar">
+                   <a href="<?= ScriptApp.getService().getUrl()?>">        
+                    <button id="epiBtn" class="waves-effect waves-light btn-small col s3">
+                       <i class="material-icons left">arrow_back</i>
+                       Voltar
+                    </button>
+                    </a>
+             </div>
+           </div>             
+       </main>
+    <footer>
+      <div class="container">
+        <span>Copyright &copy; 2021 <b>Raízen</b></span>
+      </div>
+    </footer>
+    <div class="loading hidden" id="loading">
+      <div class="container">        <div class="progress">
+         <div class="indeterminate"></div>
+       </div>
+      </div>
+    </div>
+    
+    <button onclick="topFunction()" id="topBtn" title="Go to top"><i class="material-icons">arrow_upward</i></button>
+    <?!= include("js"); ?>
+    <?!= include("acptojs"); ?>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+
+</html>

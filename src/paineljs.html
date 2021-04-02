@@ -1,0 +1,49 @@
+<!-- SCRIPT -->
+
+<script>
+     document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('clrBtn').addEventListener('click', buscarPedido, false);
+    },false);
+    
+    function buscarPedido(){
+     let pedido = document.getElementById('nPedido').value;
+     
+     if(isNaN(pedido)){
+      let aviso = document.getElementById('camposObrigatorios');
+      aviso.innerHTML = "Entre apenas números";
+      return;
+     }
+     
+     let negativo = pedido < 0;
+     pedido = negativo ? pedido * (-1) : pedido;
+     onLoading();
+     google.script.run.withSuccessHandler(
+       function(res){
+        //debugger;
+        let status = document.getElementsByClassName('status');
+        let pedido = [res[1],res[2],res[4],res[5],res[3]];
+        console.log(pedido);
+        for(let i = 0; i < status.length; i++){
+        status[i].innerHTML = pedido[i];
+        }
+       
+        console.log(res);
+        let statusId = document.getElementById('status');
+        inputNec(statusId,'alt0');
+        offLoading();
+      }
+     ).withFailureHandler(
+      function(res){
+        alert('Não foi possível buscar as informações. Por favor, entre em contato com o suporte. Ramal 6204');
+      }
+     ).getData(pedido);
+   }
+                       
+    
+
+  </script>
+  
+  
+  
+  
+  
