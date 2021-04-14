@@ -3,62 +3,92 @@ editLink = "";
 favicon =
   "https://1.bp.blogspot.com/-WOYps8_-a5w/YGZ_K0CQUqI/AAAAAAAAO94/hzjz-WbUdW0hsaxgERfReCrdfPm6aQTIgCLcBGAsYHQ/s182/logo-min.ico";
 
+const html = (fileName, title) => {
+  let temp = HtmlService.createTemplateFromFile(fileName);
+  return temp
+    .evaluate()
+    .setSandboxMode(HtmlService.SandboxMode.IFRAME)
+    .addMetaTag("viewport", "width=device-width, initial-scale=1")
+    .setFaviconUrl(favicon)
+    .setTitle(`${title} • Mage Deungaro`);
+};
+
+const dateFormat = (date) => {
+  let day = date.getDate().toString(),
+    dayF = day.length == 1 ? "0" + day : day,
+    month = (date.getMonth() + 1).toString(), //+1 pois no getMonth Janeiro começa com zero.
+    monthF = month.length == 1 ? "0" + month : month,
+    yearF = date.getFullYear();
+  return "'" + dayF + "/" + monthF + "/" + yearF;
+};
+
+const sendEmail = (msg, emailAddress) => {
+  let subject = "New Request - Conceptual App Demo";
+  MailApp.sendEmail(emailAddress, subject, "This is your new request!", {
+    htmlBody: msg,
+  });
+};
+
+const getAppUrl = (query) => {
+  return ScriptApp.getService().getUrl() + query;
+};
+
+const include = (fileName) => {
+  return HtmlService.createHtmlOutputFromFile(fileName).getContent();
+};
+
+const getData = (ssId, wsName, startRow, startCol, numCols) => {
+  let ss = SpreadsheetApp.openById(ssId);
+  let ws = ss.getSheetByName(wsName);
+  let data = ws
+    .getRange(
+      startRow,
+      startCol,
+      ws.getRange(1, 1).getDataRegion().getLastRow() - 1,
+      numCols
+    )
+    .getValues();
+
+  return data;
+};
+
 function doGet(e) {
   if (e.parameters.v == "req") {
-    let temp = HtmlService.createTemplateFromFile("pedido");
-    return temp
-      .evaluate()
-      .setSandboxMode(HtmlService.SandboxMode.IFRAME)
-      .addMetaTag("viewport", "width=device-width, initial-scale=1")
-      .setFaviconUrl(favicon)
-      .setTitle("Solicitação de Impressão • Mage Deungaro");
+    return html("pedido", "Solicitação de Impressão");
   } else if (e.parameters.v == "acpto") {
-    let temp = HtmlService.createTemplateFromFile("acompanhamento");
-    return temp
-      .evaluate()
-      .setSandboxMode(HtmlService.SandboxMode.IFRAME)
-      .addMetaTag("viewport", "width=device-width, initial-scale=1")
-      .setFaviconUrl(favicon)
-      .setTitle("Acompanhar Pedido • Mage Deungaro");
+    return html("acompanhamento", "Acompanhar Pedido");
   } else if (e.parameters.v == "resumo") {
-    let temp = HtmlService.createTemplateFromFile("resumo");
-    return temp
-      .evaluate()
-      .setSandboxMode(HtmlService.SandboxMode.IFRAME)
-      .addMetaTag("viewport", "width=device-width, initial-scale=1")
-      .setFaviconUrl(favicon)
-      .setTitle("Acompanhar Pedido • Mage Deungaro");
+    return html("resumo", "Acompanhar Pedido");
   } else if (e.parameters.v == "painel") {
-    let temp = HtmlService.createTemplateFromFile("painel");
-    return temp
-      .evaluate()
-      .setSandboxMode(HtmlService.SandboxMode.IFRAME)
-      .addMetaTag("viewport", "width=device-width, initial-scale=1")
-      .setFaviconUrl(favicon)
-      .setTitle("Painel • Mage Deungaro");
+    return html("painel", "Painel");
   } else {
-    let temp = HtmlService.createTemplateFromFile("index");
-    return temp
-      .evaluate()
-      .setSandboxMode(HtmlService.SandboxMode.IFRAME)
-      .addMetaTag("viewport", "width=device-width, initial-scale=1")
-      .setFaviconUrl(favicon)
-      .setTitle("Solicitação de Impressão • Mage Deungaro");
+    return html("index", "Ordering Platform");
   }
 }
 
-function include(fileName) {
-  return HtmlService.createHtmlOutputFromFile(fileName).getContent();
-}
+const getRequest = (request) => {
+  let requests = getData(ssId, "Database", 2, 1, 11);
 
-function writeData(data) {
+  request = requests.filter((v) => v[1] == request);
+
+  return request.flat();
+};
+
+const getStaticData = () => {
+  let data = {
+    cod: getData(ssId, "Static_Data", 2, 1, 1).flat(),
+    desc: getData(ssId, "Static_Data", 2, 2, 1).flat(),
+  };
+
+  return data;
+};
+
+const writeData = (data) => {
   let ss = SpreadsheetApp.openById(ssId);
 
   //datas, mes, ano
   let date = new Date();
   let date2 = new Date(data[data.length - 1]);
-  let month = date2.getMonth() + 1;
-  let ano = date2.getFullYear();
   let nPedido = Date.now();
 
   date = dateFormat(date);
@@ -103,51 +133,4 @@ function writeData(data) {
   let query = getAppUrl("?v=resumo&p=" + nPedido);
 
   return query;
-}
-
-function sendEmail(msg) {
-  let emailAddress = [
-    "centralagricolagasa@raizen.com",
-    "henilly.santos@raizen.com",
-    "maria.borgato@raizen.com",
-  ];
-  //let emailAddress = ['maria.borgato@raizen.com'];
-  let message = msg;
-  let subject = "Solicitação de Impressão";
-  for (let i = 0; i < emailAddress.length; i++) {
-    MailApp.sendEmail(
-      emailAddress[i],
-      subject,
-      "Segue nova solicitação de impressão.",
-      { htmlBody: message }
-    );
-  }
-}
-
-function getAppUrl(query) {
-  return ScriptApp.getService().getUrl() + query;
-}
-
-function getData(pedido) {
-  //let pedido2 = pedido || "050320211";
-  let ss = SpreadsheetApp.openById(ssId);
-  let ws1 = ss.getSheetByName("Database");
-  let pedidos = ws1
-    .getRange(2, 1, ws1.getRange(1, 1).getDataRegion().getLastRow() - 1, 11)
-    .getValues();
-
-  pedido = pedidos.filter((v) => v[1] == pedido);
-
-  console.log(pedido);
-
-  return pedido.flat();
-}
-
-function dateFormat(data) {
-  let dia = data.getDate().toString(),
-    diaF = dia.length == 1 ? "0" + dia : dia,
-    mes = (data.getMonth() + 1).toString(), //+1 pois no getMonth Janeiro começa com zero.
-    mesF = mes.length == 1 ? "0" + mes : mes,
-    anoF = data.getFullYear();
-  return "'" + diaF + "/" + mesF + "/" + anoF;
-}
+};

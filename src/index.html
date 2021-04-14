@@ -10,14 +10,18 @@
     <main>
       <div class="container">
         <div class="imgContainer"><img class="logo" src="https://drive.google.com/uc?export=download&amp;id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g" alt="logo"></div>
-        <h1><b>Portal de Requisição</b></h1>
+        <h1><b>Ordering Platform</b></h1>
         <div class="row">
-          <p>Esta é uma aplicação conceitual que engloba diversos aspectos das mini-aplicações que desenvolvo no dia a dia para melhoria de fluxos.</p>
+          <p>Conceptual application that shows many aspects of mini-apps I develop on a daily basis to improve workflows.<br>Developed using Appscript, Pug, Sass, Materialize Css, Parcel and my SVGs were made with BoxySvg.</p>
+          <h3> <b>Why use Appscript?</b></h3>
+          <p>Many organizations use Google Forms to organize processes. Appscript offers a way to customize many of the Google Services, including Forms itself. But why not create something even more customized with Google Scripts?</p>
+          <h4> <b>Wanna see this working?</b></h4>
+          <p>Send a <em>fake request</em> and take a look at this <a href="https://docs.google.com/spreadsheets/d/1JOWLsx4v434yeza_ufh816wIRfAHbi0VDImr13VmQ8Q/edit?usp=sharing">spreadsheet! </a></p>
         </div>
         <div class="row enviar"><a href="<?= ScriptApp.getService().getUrl()?>?v=req">
-            <button class="waves-effect waves-light btn-small col s3" id="epiBtn"><i class="material-icons left">add_shopping_cart</i><span>Fazer pedido</span></button></a></div>
+            <button class="waves-effect waves-light btn-small col s3" id="epiBtn"><i class="material-icons left">add_shopping_cart</i><span>Request material</span></button></a></div>
         <div class="row enviar"><a href="<?= ScriptApp.getService().getUrl()?>?v=acpto">
-            <button class="waves-effect waves-light btn-small col s3" id="matBtn"><i class="material-icons left">local_shipping</i><span>Acompanhar pedido</span></button></a></div>
+            <button class="waves-effect waves-light btn-small col s3" id="matBtn"><i class="material-icons left">local_shipping</i><span>See request status</span></button></a></div>
       </div>
     </main>
     <footer>

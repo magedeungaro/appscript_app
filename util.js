@@ -13,6 +13,10 @@ const files = {
     from: "./client/html/pedido.html",
     to: "./src/pedido.html",
   },
+  server: {
+    from: "./server/main.js",
+    to: "./src/main.js",
+  },
 };
 
 Object.values(files).forEach((value) => {

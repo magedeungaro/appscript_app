@@ -12,12 +12,29 @@ html
         include ../pug_components/_logo.pug 
         
         h1
-          b Portal de Requisição
+          b Ordering Platform
+
         div.row
-          p Esta é uma aplicação conceitual que engloba diversos aspectos das mini-aplicações que desenvolvo no dia a dia para melhoria de fluxos.
-        +button_link("<?= ScriptApp.getService().getUrl()?>?v=req", "epiBtn", 'add_shopping_cart', 'Fazer pedido')
+          p Conceptual application that shows many aspects of mini-apps I develop on a daily basis to improve workflows.
+            br 
+            | Developed using Appscript, Pug, Sass, Materialize Css, Parcel and my SVGs were made with BoxySvg.
+
+          h3 
+            b Why use Appscript?
+
+          p Many organizations use Google Forms to organize processes. Appscript offers a way to customize many of the Google Services, including Forms itself. But why not create something even more customized with Google Scripts?
+
+          h4 
+            b Wanna see this working?
+            
+          p Send a 
+            em fake request
+            |  and take a look at this 
+            a(href="https://docs.google.com/spreadsheets/d/1JOWLsx4v434yeza_ufh816wIRfAHbi0VDImr13VmQ8Q/edit?usp=sharing") spreadsheet! 
+
+        +button_link("<?= ScriptApp.getService().getUrl()?>?v=req", "epiBtn", 'add_shopping_cart', 'Request material')
      
-        +button_link("<?= ScriptApp.getService().getUrl()?>?v=acpto", "matBtn", 'local_shipping', 'Acompanhar pedido')
+        +button_link("<?= ScriptApp.getService().getUrl()?>?v=acpto", "matBtn", 'local_shipping', 'See request status')
 
     include ../pug_components/_footer.pug 
 

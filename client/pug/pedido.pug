@@ -12,54 +12,31 @@ html
 
             h1 
               b 
-                small Painel
+                small Make your request
 
             span.pink_#camposObrigatorios
              
             div.row
-                div.input-field.col.s6
-                  p Solicitante (Nome Completo) 
+                div.input-field.col.s12
+                  p Name
                     span.pink_  *
                   input(type="text")#solicitante.validate
                 
-                div.input-field.col.s6
-                  p Matrícula (XXXXXX) 
-                    span.pink_ *
-                  input(type="text")#cs.validate.cs
-                  small 
-                    span.pink_ 
-             
-            div.row
-              div.input-field.col.s6
-                p Tipo de impressão 
-                  span.pink_ *
-                select#tipo1.validate
-                  option(selected) Preto e Branco
-                  option Colorido
-               
-              div.input-field.col.s6
-                p Tipo de impressão 2 
-                  span.pink_ *
-                select#tipo2.validate
-                  option(selected) Frente e Verso
-                  option Frente
-             
             div.row
               div.input-field.col.s12
-                p Solicitação
+                p Request a material
                   span.pink_ *
-                textarea#solicitacao.materialize-textarea.validate
 
-            div.row
-              div.input-field.col.s12
-                p Data Necessidade
-                  span.pink_ *
-                input(type="text").datepicker.validate#data
-                small
-                  span.pink_#avisoPrazo
+                select(multiple).material 
+                  option(disabled, value="", selected) Select a material
+
+                  <? const materials = getStaticData();?>
+                   <? for(let k = 0; k < materials.cod.length; k++){ ?>
+                  option <?= `${materials.cod[k]} - ${materials.desc[k]}`; ?>
+                  <? }?>
 
             div.row.enviar
-              +button("btn", "send", "Registrar")
+              +button("btn", "send", "Next")
 
     include ../pug_components/_footer.pug 
 
