@@ -35,6 +35,13 @@ html
                   option <?= `${materials.cod[k]} - ${materials.desc[k]}`; ?>
                   <? }?>
 
+            div.row
+              div.input-field.col.s12
+                p Select preferred shipping date 
+                  span.pink_ *
+                  
+                input(type="text").datepicker
+
             div.row.enviar
               +button("btn", "send", "Next")
 

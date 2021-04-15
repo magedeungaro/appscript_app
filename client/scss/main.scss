@@ -266,12 +266,17 @@ button.datepicker-done {
   color: $lilac !important;
 }
 
-td.is-today {
-  color: $bic !important;
+td {
+  &.is-today {
+    color: $bic !important;
+  }
+  &.is-selected {
+    color: $banana !important;
+  }
 }
 
 button.datepicker-day-button:focus {
-  background-color: rgba(150, 26, 142, 0.3);
+  background-color: $lilac-30;
 }
 button.month-next:focus,
 button.month-prev:focus,

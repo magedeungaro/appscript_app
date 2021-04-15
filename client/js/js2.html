@@ -13,10 +13,17 @@
     
       M.Datepicker.init(document.querySelectorAll('.datepicker'), 
     {
-      defaultDate: null,
-      maxDate: null,
-      yearRange: null,
-      format: "yyyy/mm/dd"    
+      disableWeekends: true,
+      firstDay: 1,
+      yearRange: 1,
+      showDaysInNextAndPreviousMonths: true,
+      showClearBtn: true,
+      defaultDate: new Date(),
+      format: "yyyy/mm/dd",
+      disableDayFn: function(date) {
+        let today = new Date();
+        return date.getDate() <= today.getDate();
+      }
      }
     );  
  },false);

@@ -54,11 +54,11 @@ const getData = (ssId, wsName, startRow, startCol, numCols) => {
 
 function doGet(e) {
   if (e.parameters.v == "req") {
-    return html("pedido", "Solicitação de Impressão");
-  } else if (e.parameters.v == "acpto") {
-    return html("acompanhamento", "Acompanhar Pedido");
+    return html("pedido", "Make your request - Step 1");
   } else if (e.parameters.v == "resumo") {
-    return html("resumo", "Acompanhar Pedido");
+    return html("resumo", "Finish your request - Step 2");
+  } else if (e.parameters.v == "acpto") {
+    return html("acompanhamento", "Track your order");
   } else if (e.parameters.v == "painel") {
     return html("painel", "Painel");
   } else {

@@ -17,6 +17,10 @@ const files = {
     from: "./server/main.js",
     to: "./src/main.js",
   },
+  js2: {
+    from: "./client/js/js2.html",
+    to: "./src/js2.html",
+  },
 };
 
 Object.values(files).forEach((value) => {
