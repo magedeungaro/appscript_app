@@ -55,8 +55,10 @@ const getData = (ssId, wsName, startRow, startCol, numCols) => {
 function doGet(e) {
   if (e.parameters.v == "req") {
     return html("pedido", "Make your request - Step 1");
+  } else if (e.parameters.v == "req2") {
+    return html("pedido2", "Finish your request - Step 2");
   } else if (e.parameters.v == "resumo") {
-    return html("resumo", "Finish your request - Step 2");
+    return html("resumo", "Your order");
   } else if (e.parameters.v == "acpto") {
     return html("acompanhamento", "Track your order");
   } else if (e.parameters.v == "painel") {
