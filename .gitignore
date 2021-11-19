@@ -3,3 +3,4 @@ tsconfig.json
 src/appsscript.json
 dist/*.css.map
 node_modules/
+.parcel-cache/
