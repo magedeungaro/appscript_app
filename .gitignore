@@ -1,7 +1,5 @@
 .vscode/
-.clasp.json
 tsconfig.json
 src/appsscript.json
-dist/*.css
+dist/*.css.map
 node_modules/
-pu.sh

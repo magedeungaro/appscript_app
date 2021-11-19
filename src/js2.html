@@ -36,7 +36,7 @@
    //ver se a data de necessidade está dentro do ao menos um dia de antecedência
    let today = new Date();
    let dataNec = new Date(infos[infos.length-1].value);
-   if(dataNec-today<1){ 
+   if(dataNec - today < 1){ 
     console.log('data menor do que a necessaria');
     let dataInput = document.getElementById('data');
     let avisoPrazo = document.getElementById('avisoPrazo');
@@ -80,8 +80,6 @@
   ).writeData(pedido);
 }
                     
- 
-
 </script>
 
 

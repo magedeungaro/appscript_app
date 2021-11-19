@@ -1,23 +1,23 @@
-include ../pug_mixins/_mixins.pug
+include ./mixins/_mixins.pug
 
 doctype html
 html
   
-  include ../pug_components/_header.pug
+  include ./components/_header.pug
 
-  body#mat2
+  body
 
     main
       div.container
-        include ../pug_components/_logo.pug 
+        include ./components/_logo.pug 
         
         h1
-          b Ordering Platform
+          b About this
 
         div.row
-          p Conceptual application that shows many aspects of mini-apps I develop on a daily basis to improve workflows.
+          p Conceptual application that shows many aspects of mini-apps I developed on a daily basis to improve workflows.
             br 
-            | Developed using Appscript, Pug, Sass, Materialize Css, Parcel and my SVGs were made with BoxySvg.
+            | Developed using Appscript, Typescript, Pug, Sass, Materialize CSS, Parcel and the SVGs were made with BoxySvg.
 
           h3 
             b Why use Appscript?
@@ -32,16 +32,16 @@ html
             |  and take a look at this 
             a(href="https://docs.google.com/spreadsheets/d/1JOWLsx4v434yeza_ufh816wIRfAHbi0VDImr13VmQ8Q/edit?usp=sharing") spreadsheet! 
 
-        +button_link("<?= ScriptApp.getService().getUrl()?>?v=req", "epiBtn", 'add_shopping_cart', 'Request material')
+        //- +button_link("<?= ScriptApp.getService().getUrl()?>?v=req", "epiBtn", 'add_shopping_cart', 'Request material')
      
-        +button_link("<?= ScriptApp.getService().getUrl()?>?v=acpto", "matBtn", 'local_shipping', 'See request status')
+        //- +button_link("<?= ScriptApp.getService().getUrl()?>?v=acpto", "matBtn", 'local_shipping', 'See request status')
 
-    include ../pug_components/_footer.pug 
+    include ./components/_footer.pug 
 
-    include ../pug_components/_loading.pug 
+    include ./components/_loading.pug 
 
-    include ../pug_components/_topButton.pug 
+    include ./components/_topButton.pug 
     
-    include ../pug_components/_scripts.pug 
+    include ./components/_scripts.pug 
 
    
