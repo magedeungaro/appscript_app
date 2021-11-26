@@ -1,12 +1,12 @@
 /* custom */
 @import "var";
 @import "reset";
-@import "./vendor/materialize";
-@import "./vendor/materialize-override";
-@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
+@import "global";
 @import "./components/button";
 @import "./components/footer";
 @import "./components/loading";
 @import "./components/logo";
 @import "./components/scrollbar";
 @import "./components/selection";
+@import "./vendor/materialize-override";
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
