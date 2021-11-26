@@ -3,15 +3,16 @@
     "@types/google-apps-script": "^1.0.41",
     "parcel": "^2.0.1",
     "pug": "^3.0.2",
-    "sass": "^1.43.4"
+    "sass": "^1.43.5"
   },
   "scripts": {
-    "dev": "parcel ./client/css/css.html",
-    "build": "parcel build ./client/css/css.html --no-minify --no-source-maps --no-cache",
-    "pug-process": "pug ./client/pug/ -o ./client/html -P",
-    "bash-replace": "bash replace.sh",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "git": "bash scripts/pu.sh",
-    "process": "npm run pug-process && npm run bash-replace && npm run build && node util.js && clasp push"
+    "css": "bash scripts/style.sh",
+    "pug": "pug ./client/pug/pages -o ./client/html -P",
+    "copy": "bash scripts/copyFile.sh",
+    "catServer": "bash scripts/unify.sh",
+    "process": "npm run pug && npm run css && npm run catServer && tsc && npm run copy"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.1",

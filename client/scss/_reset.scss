@@ -41,3 +41,42 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/*Declaração de Seleção*/
+::-moz-selection {
+  /* Code for Firefox */
+  background: $lilac;
+  color: white;
+}
+
+::selection {
+  background: $lilac;
+  color: white;
+}
+
+/*caret color*/
+* {
+  caret-color: $lilac;
+}
+
+main {
+  padding-top: 3rem;
+  min-height: 95vh;
+}
+
+hr {
+  border: 1px dashed #bababa;
+}
+
+footer {
+  text-align: center;
+  background-color: $lilac;
+  color: white;
+  padding: 15px 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+  clear: both;
+}

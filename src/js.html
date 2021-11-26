@@ -1,67 +1,8 @@
-<!-- SCRIPT -->
-
 <script>
-  const myreg = /^(CS)?(?<digitos>\d{6})$/;
 
-  //scroll to top button
-  //Get the button:
-  mybutton = document.getElementById("topBtn");
-
-  // When the user scrolls down 20px from the top of the document, show the button
-  window.onscroll = function () { scrollFunction() };
-
-  function scrollFunction() {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      mybutton.style.display = "block";
-    } else {
-      mybutton.style.display = "none";
-    }
-  }
-
-  function onLoading() {
-    document.getElementById("loading").classList.remove("hidden");
-  }
-
-  function offLoading() {
-    document.getElementById("loading").classList.add("hidden");
-  }
-
-  // When the user clicks on the button, scroll to the top of the document
-  function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  }
-
-  function csRegex(el, reg, x) {
-    // const myreg = /^(CS)?(?<digitos>\d{6})$/;
-    const res = reg.exec(el.value.toUpperCase());
-    let aviso = el.nextElementSibling;
-
-    if (res === null) {
-      el.classList.add('wrong');
-      let a = document.getElementById(el.id);
-      aviso.getElementsByTagName('span')[0].innerHTML = 'É necessário entrar um cs em formato válido';
-    } else {
-      inputNec(el, 'wrong');
-      aviso.getElementsByTagName('span')[0].innerHTML = "";
-    }
-    return;
-  }
-
-  function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
-  function inputNec(el, cls) {
-    if (el.classList.contains(cls)) {
-      el.classList.remove(cls);
-    }
-  }
-
-  function inputNec2(el, cls) {
-    if (!el.classList.contains(cls)) {
-      el.classList.add(cls);
-    }
-  }
-
+                    
 </script>
+
+
+
+

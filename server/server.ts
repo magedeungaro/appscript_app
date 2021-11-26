@@ -1,29 +1,43 @@
-const html = (fileName, title) => {
+const html = ({
+  fileName,
+  title,
+  organizationName,
+}: {
+  fileName: string;
+  title: string;
+  organizationName: string;
+}) => {
   let temp = HtmlService.createTemplateFromFile(fileName);
   return temp
     .evaluate()
     .setSandboxMode(HtmlService.SandboxMode.IFRAME)
     .addMetaTag("viewport", "width=device-width, initial-scale=1")
     .setFaviconUrl(favicon)
-    .setTitle(`${title} • Mage Deungaro`);
+    .setTitle(`${title} • ${organizationName}`);
 };
 
-const sendEmail = (msg, emailAddress) => {
+const sendEmail = (msg: string, emailAddress: string) => {
   let subject = "New Email - Appscript Demo";
   MailApp.sendEmail(emailAddress, subject, "This is your new request!", {
     htmlBody: msg,
   });
 };
 
-const getAppUrl = (query) => {
-  return ScriptApp.getService().getUrl() + query;
+const getAppUrl = (query: string) => {
+  return `${ScriptApp.getService().getUrl()}?${query}`;
 };
 
-const include = (fileName) => {
+const include = (fileName: string) => {
   return HtmlService.createHtmlOutputFromFile(fileName).getContent();
 };
 
-const getData = (ssId, wsName, startRow, startCol, numCols) => {
+const getData = (
+  ssId: string,
+  wsName: string,
+  startRow: number,
+  startCol: number,
+  numCols: number
+) => {
   let ss = SpreadsheetApp.openById(ssId);
   let ws = ss.getSheetByName(wsName);
   let data = ws
@@ -38,7 +52,7 @@ const getData = (ssId, wsName, startRow, startCol, numCols) => {
   return data;
 };
 
-const query = (request: string): any[][] => {
+const query = (request: string) => {
   let sheet = ss.insertSheet();
   let range = sheet.getRange(1, 1);
   range.setFormula(request);
@@ -50,7 +64,7 @@ const query = (request: string): any[][] => {
 };
 
 const xlQuery = (rng: string, query: string) => {
-  return `=IFERROR(QUERY(${rng}; "${query}";1);"")`;
+  return `=IFERROR(QUERY(${rng}; "${query}";1);"ERROR")`;
 };
 
 const writeData = (wsName: string, infoArray: Array<any>): void => {
