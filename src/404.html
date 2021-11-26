@@ -10,11 +10,11 @@
     <main>
       <div class="custom-container">
         <div class="imgContainer"><img class="logo" src="https://drive.google.com/uc?export=download&amp;id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g" alt="logo"></div>
-        <div class="custom-container">
-          <h1><b>About this</b></h1>
-          <div class="row">
-            <p>Conceptual application that shows many aspects of mini-apps I developed on a daily basis to improve workflows.<br>Developed using Appscript, Typescript, Pug, Sass, Materialize CSS, Parcel and the SVGs were made with BoxySvg.</p>
-          </div>
+        <h1><b>Page not found</b></h1>
+        <div class="row">
+          <p>Oops!<br>It seems this was removed or something like that.</p>
+          <div class="row enviar"><a href="<?= ScriptApp.getService().getUrl()?>">
+              <button class="custom-button waves-effect waves-light btn-small col s3" id=""><i class="material-icons left">arrow_back</i><span>Back</span></button></a></div>
         </div>
       </div>
     </main>
@@ -28,16 +28,7 @@
         </div>
       </div>
     </div>
-    <button onclick="topFunction()" title="Go to top" id="top-btn"><i class="material-icons">arrow_upward</i></button>
-    <template id="card">
-      <div class="col s12 m6">
-        <div class="card">
-          <div class="card-image"><img class="monster-sprite" src=""><span class="card-title"> </span></div>
-          <div class="card-content"><span class="monster-interval"></span><span class="monster-element"></span><span class="monster-map"></span></div>
-          <div class="card-action hidden"><a href="#">This is a link</a></div>
-        </div>
-      </div>
-    </template><?!= include("js"); ?>
+    <button onclick="topFunction()" title="Go to top" id="top-btn"><i class="material-icons">arrow_upward</i></button><?!= include("js"); ?>
 <?!= include("materialize"); ?>
     <!--script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")-->
   </body>

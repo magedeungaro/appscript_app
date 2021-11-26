@@ -4,11 +4,11 @@
     <base target="_top">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&amp;display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")-->
   </head>
   <body>
     <main>
-      <div class="container">
+      <div class="custom-container">
         <div class="imgContainer"><img class="logo" src="https://drive.google.com/uc?export=download&amp;id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g" alt="logo"></div>
         <h1><b>About this</b></h1>
         <div class="row">
@@ -18,7 +18,7 @@
           <h4> <b>Wanna see this working?</b></h4>
           <p>Source code at<a href="https://github.com/magedeungaro/appscript_app">github</a></p>
           <p>Send a<em>demo request</em> and take a look at this <a href="https://docs.google.com/spreadsheets/d/1JOWLsx4v434yeza_ufh816wIRfAHbi0VDImr13VmQ8Q/edit?usp=sharing">spreadsheet! </a></p>
-          <div class="row enviar"><a href="&lt;?= ScriptApp.getService().getUrl()?&gt;">
+          <div class="row enviar"><a href="<?= ScriptApp.getService().getUrl()?>">
               <button class="custom-button waves-effect waves-light btn-small col s3" id=""><i class="material-icons left">arrow_back</i><span>Back</span></button></a></div>
         </div>
       </div>
@@ -33,7 +33,8 @@
         </div>
       </div>
     </div>
-    <button onclick="topFunction()" title="Go to top" id="topBtn"><i class="material-icons">arrow_upward</i></button><?!= include("js"); ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <button onclick="topFunction()" title="Go to top" id="top-btn"><i class="material-icons">arrow_upward</i></button><?!= include("js"); ?>
+<?!= include("materialize"); ?>
+    <!--script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")-->
   </body>
 </html>

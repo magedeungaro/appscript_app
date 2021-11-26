@@ -1,10 +1,12 @@
 /* custom */
 @import "var";
 @import "reset";
-@import "materialize";
+@import "./vendor/materialize";
+@import "./vendor/materialize-override";
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
 
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: Nunito, sans-serif;
   font-size: 18px;
 
   a,
@@ -16,6 +18,10 @@ body {
 
 h6 {
   color: $magenta;
+}
+
+input:disabled {
+  background-color: transparent;
 }
 
 div.row {
@@ -32,10 +38,6 @@ div.row {
   }
 }
 
-input:disabled {
-  background-color: transparent;
-}
-
 ul {
   list-style: none;
   padding: 0 !important;
@@ -46,32 +48,28 @@ ul {
 }
 
 .custom-button {
-  border: none;
   color: white;
   cursor: pointer;
   font-weight: bold;
   height: 42px;
-}
-
-.custom-button {
   background-color: $magenta;
   border: 1px solid $magenta;
-}
 
-.custom-button:hover {
-  background-color: white;
-  color: $magenta;
-}
+  &:hover {
+    background-color: white;
+    color: $magenta;
+  }
 
-.custom-button i.material-icons {
-  font-size: 20px;
+  & i.material-icons {
+    font-size: 20px;
+  }
 }
 
 button.col.s3.btn-small {
   width: 30%;
 }
 
-#topBtn {
+#top-btn {
   display: none;
   background: transparent;
   color: $grass;
@@ -88,7 +86,7 @@ button.col.s3.btn-small {
   &:hover {
     color: $papaya;
     outline: 1px solid $papaya;
-    outline-offset: 0px;
+    outline-offset: 0;
   }
 }
 
@@ -113,4 +111,8 @@ small p {
 
 .hidden {
   display: none;
+}
+
+.logo {
+  max-width: 10vw;
 }

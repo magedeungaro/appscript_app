@@ -1,0 +1,33 @@
+include ../mixins/_mixins.pug
+
+doctype html
+html
+  
+  include ../components/_header.pug
+
+  body
+
+    main
+      div.custom-container
+        include ../components/_logo.pug 
+        
+        h1
+          b Page not found
+
+        div.row
+          p Oops!
+            br 
+            | It seems this was removed or something like that.
+
+          +button_link("<?= ScriptApp.getService().getUrl()?>", "", "custom-button", 'arrow_back', 'Back')
+
+
+    include ../components/_footer.pug 
+
+    include ../components/_loading.pug 
+
+    include ../components/_topButton.pug 
+    
+    include ../components/_scripts.pug 
+
+   

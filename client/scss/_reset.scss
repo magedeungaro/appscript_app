@@ -1,27 +1,43 @@
+/* Declaração de Seleção */
+:-moz-selection {
+  /* Code for Firefox */
+  background: $lilac;
+  color: white;
+}
+
+:selection {
+  background: $lilac;
+  color: white;
+}
+
+/* caret color */
+* {
+  caret-color: $lilac;
+}
+
 /* width */
-::-webkit-scrollbar {
+:-webkit-scrollbar {
   width: 10px;
 }
 
 /* Track */
-::-webkit-scrollbar-track {
+:-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+:-webkit-scrollbar-thumb {
   background: #9c9c9c;
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+:-webkit-scrollbar-thumb:hover {
   background: #737373;
 }
 
 *,
-*:before,
-*:after {
-  -webkit-box-sizing: inherit;
+*::before,
+*::after {
   box-sizing: inherit;
   word-break: keep-all;
 }
@@ -31,7 +47,6 @@
 }
 
 html {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
@@ -40,23 +55,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-}
-
-/*Declaração de Seleção*/
-::-moz-selection {
-  /* Code for Firefox */
-  background: $lilac;
-  color: white;
-}
-
-::selection {
-  background: $lilac;
-  color: white;
-}
-
-/*caret color*/
-* {
-  caret-color: $lilac;
 }
 
 main {
@@ -75,8 +73,8 @@ footer {
   padding: 15px 0;
 }
 
-.container {
+.custom-container {
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
   clear: both;
 }

@@ -4,12 +4,18 @@
     <base target="_top">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&amp;display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")-->
   </head>
   <body>
     <main>
-      <div class="container">
+      <div class="custom-container">
         <div class="imgContainer"><img class="logo" src="https://drive.google.com/uc?export=download&amp;id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g" alt="logo"></div>
+        <div class="custom-container">
+          <h1><b>About this</b></h1>
+          <div class="row">
+            <p>Conceptual application that shows many aspects of mini-apps I developed on a daily basis to improve workflows.<br>Developed using Appscript, Typescript, Pug, Sass, Materialize CSS, Parcel and the SVGs were made with BoxySvg.</p>
+          </div>
+        </div>
       </div>
     </main>
     <footer>
@@ -22,7 +28,7 @@
         </div>
       </div>
     </div>
-    <button onclick="topFunction()" title="Go to top" id="topBtn"><i class="material-icons">arrow_upward</i></button>
+    <button onclick="topFunction()" title="Go to top" id="top-btn"><i class="material-icons">arrow_upward</i></button>
     <template id="card">
       <div class="col s12 m6">
         <div class="card">
@@ -32,6 +38,7 @@
         </div>
       </div>
     </template><?!= include("js"); ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<?!= include("materialize"); ?>
+    <!--script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")-->
   </body>
 </html>

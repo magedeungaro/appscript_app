@@ -8,12 +8,18 @@ html
   body
 
     main
-      div.container
+      div.custom-container
         include ../components/_logo.pug 
+
+        div.custom-container
+          h1
+            b About this
+
+          div.row
+            p Conceptual application that shows many aspects of mini-apps I developed on a daily basis to improve workflows.
+              br 
+              | Developed using Appscript, Typescript, Pug, Sass, Materialize CSS, Parcel and the SVGs were made with BoxySvg.
         
-
-      
-
     include ../components/_footer.pug 
 
     include ../components/_loading.pug 

@@ -133,9 +133,9 @@ function doGet(e: any) {
   if (!e.parameters.v) {
     title = "home";
     fileName = "index";
-  } else if (routes.includes(e.parameters.v)) {
-    title = e.parameters.v;
-    fileName = e.parameters.v;
+  } else if (routes.includes(e.parameters.v.toString())) {
+    title = e.parameters.v.toString();
+    fileName = e.parameters.v.toString();
   } else {
     title = "Page not found";
     fileName = "404";
