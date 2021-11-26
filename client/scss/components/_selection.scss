@@ -1,0 +1,14 @@
+:-moz-selection {
+  /* Code for Firefox */
+  background: $lilac;
+  color: white;
+}
+
+:selection {
+  background: $lilac;
+  color: white;
+}
+
+* {
+  caret-color: $lilac;
+}

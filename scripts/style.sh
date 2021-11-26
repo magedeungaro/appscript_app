@@ -1,5 +1,6 @@
 #!/bin/bash
 
+reset=`tput sgr0`
 magenta=`tput setaf 5`
 start_time=$(date +%s.%3N)
 
@@ -25,4 +26,4 @@ rm -r dist
 
 end_time=$(date +%s.%3N)
 elapsed=$(echo "scale=3; $end_time - $start_time" | bc)
-echo "${magenta}$(tput bold)Done in ${elapsed}ms" 
+echo "${magenta}$(tput bold)Done in ${elapsed}ms ${reset}" 

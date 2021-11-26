@@ -1,0 +1,42 @@
+main {
+  padding-top: 3rem;
+  min-height: 95vh;
+}
+
+hr {
+  border: 1px dashed #bababa;
+}
+
+.custom-container {
+  margin: 0 auto;
+  width: 90%;
+  clear: both;
+}
+
+body {
+  font-family: Nunito, sans-serif;
+  font-size: 18px;
+
+  a,
+  a:hover {
+    text-decoration: underline !important;
+    color: inherit !important;
+  }
+}
+
+h6 {
+  color: $magenta;
+}
+
+ul {
+  list-style: none;
+  padding: 0 !important;
+}
+
+small p {
+  font-size: 1.1rem;
+}
+
+.hidden {
+  display: none;
+}
