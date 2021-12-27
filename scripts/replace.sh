@@ -1,10 +1,15 @@
 #!/bin/bash
 
-#script para substituir as server side tags do appscript (.gs)
-# # Mudar &lt; para < e &gt; para >
+reset=`tput sgr0`
+magenta=`tput setaf 5`
+start_time=$(date +%s.%3N)
 
 for FILE in ./client/html/*.html;
 do 
   awk '{sub("&lt;","<")}1' $FILE > temp.txt && mv temp.txt $FILE
   awk '{sub("&gt;",">")}1' $FILE > temp.txt && mv temp.txt $FILE
 done
+
+end_time=$(date +%s.%3N)
+elapsed=$(echo "scale=3; $end_time - $start_time" | bc)
+echo "${magenta}$(tput bold)Done in ${elapsed}ms ${reset}" 

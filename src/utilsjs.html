@@ -1,0 +1,16 @@
+<script>
+  class Utils {
+    static loading(boolean = false) {
+      const el = document.getElementById("loading");
+
+      if (boolean) {
+        el.classList.remove("hidden");
+
+        return;
+      }
+
+      el.classList.add("hidden");
+    }
+
+  }
+</script>

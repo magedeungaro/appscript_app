@@ -1,0 +1,49 @@
+<script>
+  class Populate{
+    static monsters(){
+      Server.run({
+        fxName:"getMonsters", 
+        callback:(res)=>{
+          console.log(res);
+
+          res.map((monster) =>{
+            let cardsContainer = document.getElementById("cards-container");
+
+            let temp = document.querySelector("#card-template");
+
+            let clone = temp.content.cloneNode(true);
+
+            let card = clone.querySelector(".item");
+            card.id = monster.id;
+
+            let name = clone.querySelector(".monster-name");
+            name.textContent = monster.name;
+
+            let mapId = clone.querySelector(".monster-map");
+            mapId.textContent = monster.mapId;
+
+            let element = clone.querySelector(".monster-element");
+            element.textContent = monster.element;
+
+            let interval = clone.querySelector(".monster-interval");
+            interval.textContent = monster.interval;
+
+            let img = clone.querySelector("img");
+            img.src = monster.imgUrl;
+
+            cardsContainer.appendChild(clone);
+          })
+
+          Utils.loading();
+      }, 
+        errHandler:(e)=>{
+          Utils.loading();
+
+          const msg = "An error ocurred when fetching info. Please, try again.";
+
+          M.toast({html: msg, classes: 'pink darken-1'});
+
+      }})
+    }
+  }
+</script>

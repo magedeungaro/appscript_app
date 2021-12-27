@@ -285,3 +285,17 @@ input.valid[type="text"]:not(.browser-default) {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
+
+body template {
+  display: initial !important;
+}
+
+nav {
+  box-shadow: none !important;
+}
+
+.nav-wrapper #nav-mobile.right.hide-on-med-and-down a {
+  color: $primary !important;
+  text-decoration: none;
+  font-size: 18px;
+}

@@ -1,4 +1,8 @@
 interface keyValue {
   id: number;
-  desc: string;
+  name: string;
+  interval: string;
+  mapId: string;
+  element: string;
+  imgUrl: string;
 }

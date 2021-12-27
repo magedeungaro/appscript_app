@@ -4,3 +4,4 @@ src/appsscript.json
 dist/*.css.map
 node_modules/
 .parcel-cache/
+temp.txt

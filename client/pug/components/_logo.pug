@@ -1,2 +1,7 @@
-div.imgContainer
-  img(src="https://drive.google.com/uc?export=download&id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g", alt="logo").logo
+nav.transparent
+  div.nav-wrapper
+    img(src="https://drive.google.com/uc?export=download&id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g", alt="logo").brand-logo.logo
+
+    ul#nav-mobile.right.hide-on-med-and-down
+      li
+        a(href="<?= ScriptApp.getService().getUrl()?>?v=about") About

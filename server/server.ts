@@ -64,7 +64,7 @@ const query = (request: string) => {
 };
 
 const xlQuery = (rng: string, query: string) => {
-  return `=IFERROR(QUERY(${rng}; "${query}";1);"ERROR")`;
+  return `=IFERROR(QUERY(${rng}; "${query}";1);"ERROR ON QUERY FORMULA")`;
 };
 
 const writeData = (wsName: string, infoArray: Array<any>): void => {

@@ -2,6 +2,34 @@ var ssId = "1JOWLsx4v434yeza_ufh816wIRfAHbi0VDImr13VmQ8Q";
 var editLink = "";
 var favicon = "https://1.bp.blogspot.com/-WOYps8_-a5w/YGZ_K0CQUqI/AAAAAAAAO94/hzjz-WbUdW0hsaxgERfReCrdfPm6aQTIgCLcBGAsYHQ/s182/logo-min.ico";
 var ss = SpreadsheetApp.openById(ssId);
+var Monster = (function () {
+    function Monster(id) {
+        var queryStr = xlQuery("monsters!A2:E", "SELECT B, C, D, E WHERE A = ".concat(id));
+        var res = query(queryStr);
+        if (res.length > 1)
+            res.shift();
+        var monster = res.flat();
+        this.id = id;
+        this.name = monster[0];
+        this.interval = monster[1];
+        this.mapId = monster[2];
+        this.element = monster[3];
+    }
+    Monster.prototype.isValid = function () {
+        return this.name !== undefined && this.name !== null && this.name !== "";
+    };
+    Monster.all = function () {
+        var queryStr = xlQuery("monsters!A2:F", "SELECT A, B, C, D, E, F");
+        var res = query(queryStr);
+        return keyValueMaker(res);
+    };
+    return Monster;
+}());
+var getMonsters = function () {
+    var monsters = Monster.all();
+    Logger.log(monsters);
+    return monsters;
+};
 var html = function (_a) {
     var fileName = _a.fileName, title = _a.title, organizationName = _a.organizationName;
     var temp = HtmlService.createTemplateFromFile(fileName);
@@ -41,7 +69,7 @@ var query = function (request) {
     return value;
 };
 var xlQuery = function (rng, query) {
-    return "=IFERROR(QUERY(".concat(rng, "; \"").concat(query, "\";1);\"ERROR\")");
+    return "=IFERROR(QUERY(".concat(rng, "; \"").concat(query, "\";1);\"ERROR ON QUERY FORMULA\")");
 };
 var writeData = function (wsName, infoArray) {
     var ws = ss.getSheetByName(wsName);
@@ -62,7 +90,14 @@ var xlString = function (number) {
 var keyValueMaker = function (array) {
     var obj = [];
     array.map(function (v) {
-        obj.push({ id: v[0], desc: v[1] });
+        obj.push({
+            id: v[0],
+            name: v[1],
+            interval: v[2],
+            mapId: v[3],
+            element: v[4],
+            imgUrl: v[5]
+        });
     });
     return obj;
 };
@@ -85,9 +120,9 @@ function doGet(e) {
         title = "home";
         fileName = "index";
     }
-    else if (routes.includes(e.parameters.v)) {
-        title = e.parameters.v;
-        fileName = e.parameters.v;
+    else if (routes.includes(e.parameters.v.toString())) {
+        title = e.parameters.v.toString();
+        fileName = e.parameters.v.toString();
     }
     else {
         title = "Page not found";

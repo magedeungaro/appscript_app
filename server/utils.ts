@@ -20,7 +20,14 @@ const keyValueMaker = (array: any[][]): Array<keyValue> => {
   let obj: Array<keyValue> = [];
 
   array.map((v) => {
-    obj.push({ id: v[0], desc: v[1] });
+    obj.push({
+      id: v[0],
+      name: v[1],
+      interval: v[2],
+      mapId: v[3],
+      element: v[4],
+      imgUrl: v[5],
+    });
   });
 
   return obj;
