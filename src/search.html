@@ -1,0 +1,18 @@
+<script>
+  function lookUp(input) {
+    let header,
+    filter = input.value.toUpperCase(),
+    searchBox = input.nextElementSibling;
+    card = searchBox.getElementsByClassName("item");
+
+    for (i = 0; i < card.length; i++) {
+    header = card[i].getElementsByClassName("monster-name")[0];
+
+      if (header.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        card[i].style.display = "";
+      } else {
+        card[i].style.display = "none";
+      }
+    }
+  }
+</script>

@@ -10,7 +10,13 @@
   <body>
     <main>
       <div class="custom-container">
-        <div class="imgContainer"><img class="logo" src="https://drive.google.com/uc?export=download&amp;id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g" alt="logo"></div>
+        <nav class="transparent">
+          <div class="nav-wrapper"><img class="brand-logo logo" src="https://drive.google.com/uc?export=download&amp;id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g" alt="logo">
+            <ul class="right hide-on-med-and-down" id="nav-mobile">
+              <li><a href="<?= ScriptApp.getService().getUrl()?>?v=about">About</a></li>
+            </ul>
+          </div>
+        </nav>
         <h1><b>About this</b></h1>
         <div class="row">
           <p>Conceptual application that shows many aspects of mini-apps I developed on a daily basis to improve workflows.<br>Developed using Appscript, Typescript, Pug, Sass, Materialize CSS, Parcel and the SVGs were made with BoxySvg.</p>
@@ -34,8 +40,12 @@
         </div>
       </div>
     </div>
-    <button onclick="topFunction()" title="Go to top" id="top-btn"><i class="material-icons">arrow_upward</i></button><?!= include("js"); ?>
-<?!= include("materialize"); ?>
+    <button title="Go to top" id="top-btn"><i class="material-icons">arrow_upward</i></button><?!= include("scroll"); ?>
+<?!= include("serverjs"); ?>
+<?!= include("utilsjs"); ?>
+<?!= include("populate"); ?>
+<?!= include("search"); ?>
+<?!= include("main"); ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>

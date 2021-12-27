@@ -10,11 +10,18 @@
   <body>
     <main>
       <div class="custom-container">
-        <div class="imgContainer"><img class="logo" src="https://drive.google.com/uc?export=download&amp;id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g" alt="logo"></div>
+        <nav class="transparent">
+          <div class="nav-wrapper"><img class="brand-logo logo" src="https://drive.google.com/uc?export=download&amp;id=15U-OFa7VZ1sXniAjyL426cKAmpFpIp-g" alt="logo">
+            <ul class="right hide-on-med-and-down" id="nav-mobile">
+              <li><a href="<?= ScriptApp.getService().getUrl()?>?v=about">About</a></li>
+            </ul>
+          </div>
+        </nav>
         <div class="custom-container">
-          <h1><b>About this</b></h1>
+          <h1><b>Demo App</b></h1>
           <div class="row">
-            <p>Conceptual application that shows many aspects of mini-apps I developed on a daily basis to improve workflows.<br>Developed using Appscript, Typescript, Pug, Sass, Materialize CSS, Parcel and the SVGs were made with BoxySvg.</p>
+            <input type="text" placeholder="Tente 'Maya'..." id="search"/>
+            <div id="cards-container"></div>
           </div>
         </div>
       </div>
@@ -29,17 +36,25 @@
         </div>
       </div>
     </div>
-    <button onclick="topFunction()" title="Go to top" id="top-btn"><i class="material-icons">arrow_upward</i></button>
-    <template id="card">
-      <div class="col s12 m6">
-        <div class="card">
-          <div class="card-image"><img class="monster-sprite" src=""><span class="card-title"> </span></div>
-          <div class="card-content"><span class="monster-interval"></span><span class="monster-element"></span><span class="monster-map"></span></div>
-          <div class="card-action hidden"><a href="#">This is a link</a></div>
+    <button title="Go to top" id="top-btn"><i class="material-icons">arrow_upward</i></button>
+    <template id="card-template">
+      <div class="item">
+        <div class="custom-container">
+          <div class="image-container"><img class="monster-sprite" src=""></div>
+          <div class="monster-info">
+            <p><b><span class="monster-name"></span></b></p>
+            <p> <b>spawn: </b><span class="monster-interval"></span></p>
+            <p> <b>element: </b><span class="monster-element"></span></p>
+            <p> <b>map-id: </b><span class="monster-map"></span></p>
+          </div>
         </div>
       </div>
-    </template><?!= include("js"); ?>
-<?!= include("materialize"); ?>
+    </template><?!= include("scroll"); ?>
+<?!= include("serverjs"); ?>
+<?!= include("utilsjs"); ?>
+<?!= include("populate"); ?>
+<?!= include("search"); ?>
+<?!= include("main"); ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>

@@ -4,6 +4,54 @@ const favicon =
   "https://1.bp.blogspot.com/-WOYps8_-a5w/YGZ_K0CQUqI/AAAAAAAAO94/hzjz-WbUdW0hsaxgERfReCrdfPm6aQTIgCLcBGAsYHQ/s182/logo-min.ico";
 
 const ss = SpreadsheetApp.openById(ssId);
+class Monster {
+  readonly id: number;
+  readonly name: string;
+  readonly interval: string;
+  readonly mapId: string;
+  readonly element: string;
+  readonly valid: boolean;
+
+  constructor(id: number) {
+    const queryStr = xlQuery(
+      "monsters!A2:E",
+      `SELECT B, C, D, E WHERE A = ${id}`
+    );
+
+    const res = query(queryStr);
+
+    //for some reason, if id > 1, the result returns an undesired value at arr[0]
+    if (res.length > 1) res.shift();
+
+    const monster = res.flat();
+
+    this.id = id;
+    this.name = monster[0];
+    this.interval = monster[1];
+    this.mapId = monster[2];
+    this.element = monster[3];
+  }
+
+  isValid(): boolean {
+    return this.name !== undefined && this.name !== null && this.name !== "";
+  }
+
+  static all() {
+    const queryStr = xlQuery("monsters!A2:F", "SELECT A, B, C, D, E, F");
+
+    const res = query(queryStr);
+
+    return keyValueMaker(res);
+  }
+}
+
+const getMonsters = () => {
+  const monsters = Monster.all();
+
+  Logger.log(monsters);
+
+  return monsters;
+};
 const html = ({
   fileName,
   title,
@@ -70,7 +118,7 @@ const query = (request: string) => {
 };
 
 const xlQuery = (rng: string, query: string) => {
-  return `=IFERROR(QUERY(${rng}; "${query}";1);"ERROR")`;
+  return `=IFERROR(QUERY(${rng}; "${query}";1);"ERROR ON QUERY FORMULA")`;
 };
 
 const writeData = (wsName: string, infoArray: Array<any>): void => {
@@ -80,7 +128,11 @@ const writeData = (wsName: string, infoArray: Array<any>): void => {
 };
 interface keyValue {
   id: number;
-  desc: string;
+  name: string;
+  interval: string;
+  mapId: string;
+  element: string;
+  imgUrl: string;
 }
 const formatDate = (date) => {
   let day = date.getDate().toString();
@@ -104,7 +156,14 @@ const keyValueMaker = (array: any[][]): Array<keyValue> => {
   let obj: Array<keyValue> = [];
 
   array.map((v) => {
-    obj.push({ id: v[0], desc: v[1] });
+    obj.push({
+      id: v[0],
+      name: v[1],
+      interval: v[2],
+      mapId: v[3],
+      element: v[4],
+      imgUrl: v[5],
+    });
   });
 
   return obj;

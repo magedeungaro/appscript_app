@@ -1,12 +1,20 @@
-template#card
-  .col.s12.m6
-    .card
-      .card-image
+template#card-template
+  .item
+    .custom-container
+      .image-container
         img(src='').monster-sprite
-        span.card-title 
-      .card-content
-        span.monster-interval
-        span.monster-element
-        span.monster-map
-      .card-action.hidden
-        a(href='#') This is a link
+         
+      .monster-info
+        p
+          b
+            span.monster-name
+        p 
+          b spawn: 
+          span.monster-interval
+        p 
+          b element: 
+          span.monster-element
+        p 
+          b map-id: 
+          span.monster-map
+    

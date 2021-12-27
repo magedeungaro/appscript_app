@@ -8,3 +8,6 @@ mixin button(id, classes, icon, text)
     i.material-icons.left #{icon}
     span= text
 
+mixin search(inputId, placeholder, panelId)
+  input(type="text", placeholder=placeholder, id=inputId)
+  div(id=panelId)

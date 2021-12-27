@@ -1,0 +1,80 @@
+div .card {
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px 5px rgb(69 69 69 / 19%);
+
+  .card-width {
+    width: 25%;
+  }
+
+  @media only screen and (max-width: 400px) {
+    .card-width {
+      width: 100% !important;
+    }
+  }
+
+  @media only screen and (max-width: 780px) {
+    .card-width {
+      width: 50%;
+    }
+  }
+
+  .card-content {
+    background-color: $magenta;
+    color: white;
+    border-radius: 0 0 15px 15px;
+  }
+
+  .card-image {
+    height: 150px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+
+    img {
+      width: auto;
+    }
+  }
+}
+
+.item {
+  border: 0.05rem solid transparent;
+  border-radius: 0.6rem;
+  text-align: center;
+  position: relative;
+  padding: 0;
+  width: 12rem;
+  float: left;
+  background-color: #fff;
+  height: 13rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin: 5px;
+
+  .custom-container {
+    height: 13rem;
+  }
+}
+
+.item img {
+  max-height: 6em;
+}
+
+.item p {
+  padding: 0;
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+.monster-info {
+  bottom: 0;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 50%;
+}

@@ -13,12 +13,11 @@ html
 
         div.custom-container
           h1
-            b About this
+            b Demo App
 
           div.row
-            p Conceptual application that shows many aspects of mini-apps I developed on a daily basis to improve workflows.
-              br 
-              | Developed using Appscript, Typescript, Pug, Sass, Materialize CSS, Parcel and the SVGs were made with BoxySvg.
+            +search("search", "Tente 'Maya'...", "cards-container")
+            
         
     include ../components/_footer.pug 
 

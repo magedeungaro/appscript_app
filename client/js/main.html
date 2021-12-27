@@ -1,0 +1,14 @@
+<script>
+  document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+      let search = document.getElementById('search');
+
+      Utils.loading(true);
+      Populate.monsters();
+
+      search.addEventListener('keyup',function(){lookUp(this);},false);
+    },
+    false
+  );
+</script>
