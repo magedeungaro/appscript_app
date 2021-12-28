@@ -299,3 +299,13 @@ nav {
   text-decoration: none;
   font-size: 18px;
 }
+body .btn-small {
+  background-color: $lilac !important;
+  color: white !important;
+  border: $lilac 1px solid !important;
+
+  &:hover {
+    background-color: white !important;
+    color: $lilac !important;
+  }
+}
