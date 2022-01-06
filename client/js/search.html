@@ -7,8 +7,9 @@
 
     Array.from(cards).forEach(card => {
       cardHeader = card.getElementsByClassName("monster-name")[0]
+      cardElement = card.getElementsByClassName("monster-element")[0]
 
-      let isTarget = cardHeader.innerText.toUpperCase().includes(filter)
+      let isTarget = cardHeader.innerText.toUpperCase().includes(filter) || cardElement.innerText.toUpperCase().includes(filter)
 
       if(!isTarget){
         card.style.display = 'none'

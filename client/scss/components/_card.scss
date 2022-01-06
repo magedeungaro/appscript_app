@@ -52,6 +52,7 @@ div .card {
   flex-grow: 0;
   flex-shrink: 0;
   margin: 5px;
+  overflow: hidden;
 
   .custom-container {
     height: 13rem;
@@ -76,4 +77,18 @@ div .card {
   bottom: 0;
   margin: 0 auto;
   width: 100%;
+}
+
+.card-choose {
+  width: 100% !important;
+  border-radius: 50px !important;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.item:hover .card-choose {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
 }

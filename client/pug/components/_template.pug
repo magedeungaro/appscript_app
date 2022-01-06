@@ -8,13 +8,11 @@ template#card-template
         p
           b
             span.monster-name
+          
         p 
-          b spawn: 
-          span.monster-interval
-        p 
-          b element: 
           span.monster-element
-        p 
-          b map-id: 
-          span.monster-map
+
+        +button(null, 'card-choose', null, 'choose')
+
+    
     
